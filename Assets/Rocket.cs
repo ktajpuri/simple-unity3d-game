@@ -88,7 +88,7 @@ public class Rocket : MonoBehaviour
 
     private void RespondToThrustInput()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.W))
         {
             rigidbody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             audioSource = GetComponent<AudioSource>();
@@ -111,11 +111,11 @@ public class Rocket : MonoBehaviour
         rigidbody.freezeRotation = true;
         float rotationThisFrame = rcsThrust * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward * rotationThisFrame);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
